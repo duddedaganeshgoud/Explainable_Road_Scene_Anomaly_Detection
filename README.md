@@ -1,37 +1,82 @@
-# Explainable Road Scene Anomaly Detection
+# Explainable Road Scene Anomaly Detection Using VGG16 and XAI
 
-This repository presents an **Explainable Deep Learning framework for Road Scene Anomaly Detection**, combining object detection and post-hoc explainability techniques to improve transparency and trust in intelligent traffic monitoring systems.
+This repository contains the implementation of the research work  
+**“Explainable Road Scene Anomaly Detection Using VGG16 and XAI”**,  
+which proposes a transparent deep learning framework for automated road scene anomaly classification using **VGG16** and **SHAP-based Explainable AI (XAI)**.
 
-The system detects anomalous events in road scenes (such as accidents, unusual objects, or abnormal traffic behavior) and provides **visual explanations** to justify the model’s predictions.
-
----
-
-## 📌 Motivation
-
-Traditional deep learning models for traffic anomaly detection often behave as **black boxes**, making it difficult to understand *why* a particular scene is classified as anomalous.  
-This lack of interpretability limits their adoption in **safety-critical applications** such as intelligent transportation systems.
-
-This project addresses the problem by integrating **explainable AI (XAI)** techniques with deep learning-based anomaly detection.
+The system is designed to improve **trust, transparency, and reliability** in intelligent transportation and traffic surveillance systems by providing **pixel-level explanations** for model predictions.
 
 ---
 
-## 🧠 Proposed Approach
+## Abstract
 
-The proposed framework consists of three major stages:
+Smart transportation systems require automated and reliable road scene understanding.  
+While deep learning models achieve high accuracy, they often function as **black boxes**, limiting their adoption in safety-critical environments.
 
-1. **Feature Extraction & Detection**
-   - A YOLO-based object detection model is used to extract spatial and semantic information from road scenes.
-   - Deep CNN architectures (VGG16 / ResNet50) are employed to learn high-level representations.
+This project presents an **Explainable Road Scene Anomaly Detection system** that integrates:
+- **VGG16 deep learning architecture** for feature extraction and classification
+- **SHAP (SHapley Additive exPlanations)** for pixel-level interpretability
 
-2. **Anomaly Detection**
-   - The extracted features are used to distinguish between *normal* and *anomalous* road scenes.
-   - The model is trained on normal traffic patterns and flags deviations as anomalies.
+The system classifies six critical road scene categories:
+- Heavy Motor Vehicles (HMV)
+- Light Motor Vehicles (LMV)
+- Pedestrians
+- Road Damages
+- Speed Bumps
+- Unsurfaced Roads
 
-3. **Explainability**
-   - SHAP (SHapley Additive exPlanations) is applied to generate interpretable explanations.
-   - Visual explanations highlight which regions and features contributed most to the anomaly decision.
+The model achieves approximately **94% classification accuracy** and provides visual explanations that highlight the discriminative regions influencing each prediction.  
+An interactive **Streamlit-based interface** enables real-time image upload, inference, and explainability visualization.
 
 ---
 
-## 🗂️ Project Structure
+## Keywords
+
+Explainable AI (XAI), VGG16, SHAP, Road Scene Classification, Deep Learning, Computer Vision, Streamlit, Transportation Monitoring
+
+---
+
+## Methodology Overview
+
+The proposed system follows a four-stage pipeline:
+
+1. **Data Preprocessing**
+   - Input road scene images are resized to a fixed resolution
+   - Pixel normalization is applied for numerical stability
+
+2. **Feature Extraction Using VGG16**
+   - VGG16 is employed as the backbone CNN due to its strong hierarchical feature learning capability
+   - Fully connected layers and a softmax classifier are used for multi-class classification
+
+3. **Model Training and Inference**
+   - The model is trained using categorical cross-entropy loss and Adam optimizer
+   - Early stopping is applied to prevent overfitting
+   - During inference, the model predicts one of six road scene categories
+
+4. **Explainability Using SHAP**
+   - SHAP generates pixel-level attribution heatmaps
+   - Visual explanations reveal which image regions contributed most to the prediction
+   - This improves transparency and auditability of the system
+
+---
+
+## Dataset Information
+
+The system is trained and evaluated using the **RAD (Road Anomaly Detection) dataset**, which contains:
+
+- ~11,800 labeled images
+- 371 Indian road scenarios
+- Six road scene classes:
+  - LMV
+  - HMV
+  - Pedestrians
+  - Road Damages
+  - Unsurfaced Roads
+  - Speed Bumps
+
+Due to GitHub storage limitations, the dataset is **not included** in this repository.
+
+---
+
+## Project Structure
 

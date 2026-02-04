@@ -80,3 +80,20 @@ Due to GitHub storage limitations, the dataset is **not included** in this repos
 
 ## Project Structure
 
+Explainable_Road_Scene_Anomaly_Detection/
+│
+├── EXPLAINABLE_TRAFFIC_ANOMALY/
+│ ├── app.py # Streamlit application for inference
+│ ├── background.py # Background processing utilities
+│ ├── 874.ipynb # Model training and experimentation
+│ ├── 874-yolo.ipynb # Comparative YOLO experiments
+│ ├── requirements.txt # Python dependencies
+│ │
+│ ├── shap_results/
+│ │ └── shap_background.pkl # SHAP background data
+│ │
+│ ├── yolo/
+│ │ └── kaggle/working/ # YOLO utilities (comparison only)
+│
+├── .gitignore # Excludes models, datasets, outputs
+├── README.md # Project documentation

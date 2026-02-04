@@ -1,0 +1,24 @@
+# Models
+*.keras
+*.h5
+*.zip
+
+# Datasets & outputs
+data/
+dataset/
+datasets/
+images/
+frames/
+videos/
+outputs/
+results/
+runs/
+logs/
+
+# Media
+*.mp4
+*.avi
+*.jpg
+*.png
+*.npy
+*.csv
